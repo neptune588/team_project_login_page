@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login_page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/login.js" defer></script>
+</head>
+<body>
+    <div class="header_ex">
+        <header class="header">
+            <div class="logo"><a href="#!"></a></div><!-- logo -->
+            <nab class="gnb">
+                <ul class="gnb_list">
+                    <li class="sign_in"><a href="#!">로그인</a></li>
+                    <li class="sign_up"><a href="#!">회원가입</a></li>
+                    <li class="order"><a href="#!">주문조회</a></li>
+                    <li class="icon"><a href="#!"></a></li>
+                    <li class="cart"><a href="#!"></a></li>
+                </ul><!-- gnb_list -->
+            </nab><!-- gnb -->
+        </header><!-- header -->
+        <!--         <div class="quick_menu">
+            <ul>
+                <li class="recently_product"><a href="#!"></a></li>
+                <li class="recently_product"><a href="#!"></a></li>
+                <li class="top_btn"><a href="#!">TOP</a></li>
+                <li class="counsel_btn"><a href="#!"></a></li>
+            </ul>
+        </div> -->
+    </div><!-- header_ex -->
+    <div class="lnb_ex">
+        <nav class="lnb">
+            <ul class="main_menu_list">
+                <li><a href="#!">NEW</a></li>
+                <li><a href="#!">TOP</a></li>
+                <li><a href="#!">BOTTOM</a></li>
+                <li><a href="#!">ACC</a></li>
+                <li><a href="#!">PROMOTION</a></li>
+                <li><a href="#!">SALE</a></li>
+                <li><a href="#!">BRAND</a></li>
+            </ul><!-- main_menu_list -->
+            <div class="real_time_keyward_frame">
+                <ul class="keyward_list">
+                    <li><a href="#!">티셔츠</a></li>
+                    <li><a href="#!">맨투맨</a></li>
+                    <li><a href="#!">셔츠</a></li>
+                    <li><a href="#!">청바지</a></li>
+                    <li><a href="#!">언더웨어</a></li>
+                </ul><!-- keyward_list -->
+            </div><!-- real_time_keyward_frame -->
+        </nav><!-- lnb -->
+    </div>
+    <div class="login_cotainer">
+        <div class="login_box">
+            <h2 class="sub_title">Carhartt Login</h2>
+            <p>회원 로그인</p>
+            <span class="solid"></span>
+            <form action="" id="login_form">
+                <ul class="id_n_pw">
+                    <li>
+                        <input type="text" placeholder="아이디" id="user_id" class="bar" required autofocus maxlength="15">
+                    </li>
+                    <li>
+                        <input type="password" placeholder="비밀번호" id="user_pw" class="bar" required autofocus maxlength="12">
+                    </li>
+                    <div class="show_n_block">
+                        <input type="checkbox" id="pw_show_block_btn">
+                        <label for="pw_show_block_btn" class="pw_show_block_btn_design"></label>
+                    </div>
+                </ul>
+                <ul class="login_save_n_search">
+                    <li>
+                        <input type="checkbox" id="id_rm_chk" class="id_chk_design">
+                        <label for="id_rm_chk" class="id_rm">아이디 저장</label>
+                    </li>
+                    <li>
+                        <a href="#!">아이디/비밀번호 찾기</a>
+                    </li>
+                </ul>
+            </form>
+            <ul class="sign_in_n_sign_up">
+                <li>
+                    <p id="sign_in_chk">로그인</p>
+                </li>
+                <li>
+                    <a href="./sign_up.html" id="sign_up_chk">회원가입</a>
+                </li>
+            </ul>
+            <p class="easy_notice">간편하게 로그인 하세요!</p>
+            <ul class="sns_login">
+                <li><a href="#!" class="kakao_icon"><img src="../images/sns_01.png" alt="kakao_sns"></a></li>
+                <li><a href="#!" class="facebook_icon"><img src="../images/sns_02.png" alt="fb_sns"></a></li>
+                <li><a href="#!" class="naver_icon"><img src="../images/sns_03.png" alt="naver_sns"></a></li>
+            </ul>
+        </div>
+    </div><!-- login_cotainer -->
+    <div class="footer_ex">
+        <footer class="footer">
+            <div class="footer_top">
+                <div class="footer_left">
+                    <ul class="guide_list">
+                        <li><a href="#!">고객지원</a></li>
+                        <li><a href="#!">비즈니스 문의</a></li>
+                        <li><a href="#!">배송안내</a></li>
+                        <li><a href="#!">나의계정</a></li>
+                        <li><a href="#!">자주하는 질문</a></li>
+                    </ul><!-- guide_list -->
+                    <ul class="business_info_list">
+                        <li>주식회사 웍스아웃</li>
+                        <li>사업자 등록번호 : 106-86-85373</li>
+                        <li>주소 : 서울시 마포구 월드컵북로23길 24</li>
+                        <li>통신판매업 신고 : 2014-서울마포-0219</li>
+                        <li>호스팅 사업자 : 아마존 웹 서비스</li>
+                    </ul> <!-- business_info_list -->
+                </div><!-- footer_left -->
+                <div class="footer_right">
+                    <ul class="sns_list">
+                        <li><a href="#!"><i class="fab fa-instagram"></i></a></li><!-- insta_icon -->
+                        <li><a href="#!"><i class="fab fa-facebook-square"></i></a></li><!-- facebook_icon -->
+                        <li><a href="#!"><i class="fab fa-youtube"></i></a></li><!-- youtube_icon -->
+                        <li><a href="#!"><i class="fab fa-pinterest"></i></a></li><!-- pinterest_icon -->
+                        <li><a href="#!"><i class="fab fa-soundcloud"></i></a></li><!-- sound_cloud_icon -->
+                    </ul><!-- sns_list -->
+                    <ul class="contact_info_list">
+                        <li><a href="#!"><span>대표전화</span><span>02-541-0854</span></a></li>
+                        <li><a href="#!"><span>운영시간</span><span>10:00~17:00</span></a></li>
+                        <li><a href="#!"><span>휴무일</span><span>(토,일,공휴일)</span></a></li>
+                        <li><a href="#!"><span>이메일</span><span>customer@carhartt-wip.co.kr</span></a></li>
+                    </ul><!-- contact_info_list -->
+                </div><!-- footer_right -->
+            </div><!-- footer_top -->
+            <ul class="notice">
+                <li><a href="#!">© 칼하트윕 코리아 2023</a></li>
+                <li><a href="#!">이용약관</a></li>
+                <li><a href="#!">개인정보 취급방침</a></li>
+                <li><a href="#!">구매안전(에스크로) 서비스 가입사실 확인</a></li>
+            </ul><!-- notice -->
+        </footer><!-- footer -->
+    </div><!-- footer_ex -->
+</body>
+</html>

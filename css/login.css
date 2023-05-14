@@ -1,0 +1,475 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&family=Permanent+Marker&display=swap");
+
+/************************* color_plan ***************************/
+/************************* font_plan ***************************/
+/************************* gap＆padding ***************************/
+/************************* background standard  ***************************/
+/************************* item_size ***************************/
+/************************* text_array ***************************/
+/************************* center array  ***************************/
+/************************* defalut_settings ***************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    font-size: 10px;
+    background-color: #FFFDF6;
+}
+
+img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.sub_title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 20px;
+    margin: 20px 0;
+    font-family: "Permanent Marker";
+}
+
+/************************* header_ex ***************************/
+.header_ex {
+    color: #fff;
+    background-color: #000;
+}
+
+.header_ex .header {
+    position: relative;
+    width: 1245px;
+    margin: 0 auto;
+}
+
+.header_ex .header .logo {
+    padding: 10px 0;
+}
+
+.header_ex .header .logo a {
+    display: block;
+    width: 175px;
+    height: 50px;
+    margin: 0 auto;
+    background-image: url(../images/main_logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.header_ex .header .gnb {
+    position: absolute;
+    padding: 10px 0;
+    top: 10px;
+    right: 0;
+}
+
+.header_ex .header .gnb .gnb_list {
+    overflow: hidden;
+}
+
+.header_ex .header .gnb .gnb_list li {
+    float: left;
+    margin-right: 15px;
+}
+
+.header_ex .header .gnb .gnb_list li.icon {
+    margin-left: 10px;
+}
+
+.header_ex .header .gnb .gnb_list li.icon a {
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/search_icon.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header_ex .header .gnb .gnb_list li.cart a {
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/cart_icon.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateY(-5px);
+}
+
+.header_ex .header .gnb .gnb_list li:last-child {
+    margin-right: 0;
+}
+
+.header_ex .header .gnb .gnb_list li a {
+    display: block;
+    font-size: 1.2rem;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+/************************* lnb_ex ***************************/
+.lnb_ex {
+    background-color: #000;
+}
+
+.lnb_ex .lnb {
+    display: flex;
+    width: 1245px;
+    margin: 0 auto;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lnb_ex .lnb .main_menu_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lnb_ex .lnb .main_menu_list li {
+    margin-right: 50px;
+}
+
+.lnb_ex .lnb .main_menu_list li a {
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    color: #fff;
+}
+
+.lnb_ex .lnb .real_time_keyward_frame {
+    width: 120px;
+    height: 20px;
+}
+
+.lnb_ex .lnb .real_time_keyward_frame .keyward_list {
+    overflow: hidden;
+    height: 20px;
+}
+
+.lnb_ex .lnb .real_time_keyward_frame .keyward_list li {
+    position: relative;
+    margin-left: 20px;
+    width: 100px;
+    height: 20px;
+    background-color: #fff;
+}
+
+.lnb_ex .lnb .real_time_keyward_frame .keyward_list li a {
+    display: block;
+    padding-left: 10px;
+    line-height: 20px;
+    font-size: 1.4rem;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.lnb_ex .lnb .real_time_keyward_frame .keyward_list li:nth-child(1)::after {
+    content: "1";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: -20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #4136BF;
+    text-align: center;
+    line-height: 20px;
+}
+
+/************************* login_cotainer ***************************/
+.login_cotainer {
+    background-image: url(../images/login_page_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 80px 0;
+}
+
+.login_cotainer .login_box {
+    padding: 30px 0;
+    width: 825px;
+    height: 740px;
+    margin: 0 auto;
+    background-color: #FFFDF6;
+    box-shadow: 0px 5px 10px 0px;
+}
+
+.login_cotainer .login_box>h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.login_cotainer .login_box>p {
+    margin-top: 30px;
+    font-size: 30px;
+    text-align: center;
+    font-family: "Noto Sans KR", sans-serif;
+    letter-spacing: -0.8px;
+}
+
+.login_cotainer .login_box .solid {
+    display: block;
+    width: 405px;
+    height: 3px;
+    margin: 10px auto 40px;
+    background-color: #bbbbbb;
+    user-select: none;
+}
+
+.login_cotainer .login_box form {
+    width: 405px;
+    margin: 0 auto;
+}
+
+.login_cotainer .login_box form .id_n_pw {
+    position: relative;
+}
+
+.login_cotainer .login_box form .id_n_pw .bar {
+    width: 100%;
+    height: 50px;
+    background-color: #d9d9d9;
+    outline: none;
+    border: none;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    user-select: none;
+}
+
+.login_cotainer .login_box form .id_n_pw .bar:focus {
+    background-color: #fff;
+    border: 1px solid black;
+}
+
+.login_cotainer .login_box form .id_n_pw .show_n_block {
+    position: absolute;
+    top: 75px;
+    right: -55px;
+}
+
+.login_cotainer .login_box form .id_n_pw .show_n_block #pw_show_block_btn {
+    display: none;
+}
+
+.login_cotainer .login_box form .id_n_pw .show_n_block #pw_show_block_btn:checked~.pw_show_block_btn_design {
+    background-image: url(../images/pw_show_icon.PNG);
+    transform: translateY(4px);
+}
+
+.login_cotainer .login_box form .id_n_pw .show_n_block .pw_show_block_btn_design {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-image: url(../images/pw_block_icon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.login_cotainer .login_box form .login_save_n_search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: -0.8px;
+}
+
+.login_cotainer .login_box form .login_save_n_search input {
+    display: none;
+}
+
+.login_cotainer .login_box form .login_save_n_search #id_rm_chk:checked~.id_rm::after {
+    background-image: url(../images/check_icon.png);
+    background-color: lightgray;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.login_cotainer .login_box form .login_save_n_search .id_rm {
+    position: relative;
+    font-size: 1.4rem;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.login_cotainer .login_box form .login_save_n_search .id_rm::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid #bbbbbb;
+    transition: all 0.2s;
+}
+
+.login_cotainer .login_box .sign_in_n_sign_up {
+    width: 405px;
+    margin: 40px auto 0;
+}
+
+.login_cotainer .login_box .sign_in_n_sign_up>li {
+    width: 100%;
+    height: 55px;
+    margin-bottom: 15px;
+    text-align: center;
+    user-select: none;
+}
+
+.login_cotainer .login_box .sign_in_n_sign_up>li:first-child {
+    background-color: #ffbf00;
+}
+
+.login_cotainer .login_box .sign_in_n_sign_up>li:last-child {
+    background-color: #4136BF;
+}
+
+.login_cotainer .login_box .sign_in_n_sign_up>li p,
+.login_cotainer .login_box .sign_in_n_sign_up>li a {
+    display: block;
+    line-height: 55px;
+    font-size: 1.6rem;
+    color: #fff;
+    font-weight: 700;
+    font-family: "Noto Sans KR", sans-serif;
+    letter-spacing: -0.8px;
+    cursor: pointer;
+}
+
+.login_cotainer .login_box .easy_notice {
+    margin-top: 40px;
+    font-size: 1.6rem;
+}
+
+.login_cotainer .login_box .sns_login {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.login_cotainer .login_box .sns_login li {
+    margin-right: 30px;
+}
+
+.login_cotainer .login_box .sns_login li:last-child {
+    margin-right: 0;
+}
+
+.login_cotainer .login_box .sns_login li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    user-select: none;
+}
+
+/************************* footer_ex ***************************/
+.footer_ex {
+    background-color: #000;
+    color: #fff;
+}
+
+.footer_ex .footer {
+    width: 1245px;
+    margin: 0 auto;
+}
+
+.footer_ex .footer a {
+    display: block;
+}
+
+.footer_ex .footer .footer_top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_ex .footer .footer_top .footer_left {
+    width: 75%;
+}
+
+.footer_ex .footer .footer_top .footer_left .guide_list {
+    overflow: hidden;
+    margin: 20px 0 40px;
+}
+
+.footer_ex .footer .footer_top .footer_left .guide_list li {
+    float: left;
+    margin-right: 30px;
+}
+
+.footer_ex .footer .footer_top .footer_left .guide_list li a {
+    font-size: 1.2rem;
+}
+
+.footer_ex .footer .footer_top .footer_left .business_info_list {
+    margin-bottom: 40px;
+}
+
+.footer_ex .footer .footer_top .footer_left .business_info_list li {
+    font-size: 1.4rem;
+    letter-spacing: -0.8px;
+    margin-bottom: 15px;
+}
+
+.footer_ex .footer .footer_top .footer_right {
+    margin-top: 10px;
+    width: 25%;
+}
+
+.footer_ex .footer .footer_top .footer_right a {
+    display: block;
+}
+
+.footer_ex .footer .footer_top .footer_right .sns_list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footer_ex .footer .footer_top .footer_right .sns_list li a {
+    font-size: 30px;
+}
+
+.footer_ex .footer .footer_top .footer_right .contact_info_list li a {
+    overflow: hidden;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.footer_ex .footer .footer_top .footer_right .contact_info_list li a span:first-child {
+    float: left;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.footer_ex .footer .footer_top .footer_right .contact_info_list li a span:last-child {
+    float: right;
+}
+
+.footer_ex .footer .notice {
+    display: flex;
+    padding-bottom: 40px;
+}
+
+.footer_ex .footer .notice li {
+    margin-right: 20px;
+}
+
+.footer_ex .footer .notice li a {
+    font-size: 1.4rem;
+    letter-spacing: -0.8px;
+}
+
+/*# sourceMappingURL=/login.31356c07.css.map */

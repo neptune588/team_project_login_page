@@ -1,0 +1,597 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&family=Permanent+Marker&display=swap");
+
+/************************* color_plan ***************************/
+/************************* font_plan ***************************/
+/************************* gap＆padding ***************************/
+/************************* background standard  ***************************/
+/************************* item_size ***************************/
+/************************* text_array ***************************/
+/************************* center array  ***************************/
+/************************* defalut_settings ***************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    font-size: 10px;
+    background-color: #FFFDF6;
+}
+
+img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.sub_title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 20px;
+    margin: 20px 0;
+    font-family: "Permanent Marker";
+}
+
+.page {
+    display: none;
+    width: 615px;
+    padding: 40px 60px;
+    margin: 100px auto 0;
+    background-color: #fff;
+    border: 1px solid #bbbbbb;
+}
+
+.page_on {
+    display: block;
+}
+
+/************************* header_ex ***************************/
+.header_ex {
+    color: #fff;
+    background-color: #000;
+}
+
+.header_ex .header {
+    position: relative;
+    width: 1245px;
+    margin: 0 auto;
+}
+
+.header_ex .header .logo {
+    padding: 10px 0;
+}
+
+.header_ex .header .logo a {
+    display: block;
+    width: 175px;
+    height: 50px;
+    margin: 0 auto;
+    background-image: url(../images/main_logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.header_ex .header .gnb {
+    position: absolute;
+    padding: 10px 0;
+    top: 10px;
+    right: 0;
+}
+
+.header_ex .header .gnb .gnb_list {
+    overflow: hidden;
+}
+
+.header_ex .header .gnb .gnb_list li {
+    float: left;
+    margin-right: 15px;
+}
+
+.header_ex .header .gnb .gnb_list li.icon {
+    margin-left: 10px;
+}
+
+.header_ex .header .gnb .gnb_list li.icon a {
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/search_icon.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header_ex .header .gnb .gnb_list li.cart a {
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/cart_icon.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateY(-5px);
+}
+
+.header_ex .header .gnb .gnb_list li:last-child {
+    margin-right: 0;
+}
+
+.header_ex .header .gnb .gnb_list li a {
+    display: block;
+    font-size: 1.2rem;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+/************************* lnb_ex ***************************/
+.lnb_ex {
+    background-color: #000;
+}
+
+.lnb_ex .lnb {
+    display: flex;
+    width: 1245px;
+    margin: 0 auto;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lnb_ex .lnb .main_menu_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lnb_ex .lnb .main_menu_list li {
+    margin-right: 50px;
+}
+
+.lnb_ex .lnb .main_menu_list li a {
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    color: #fff;
+}
+
+.lnb_ex .lnb .real_time_keyward_frame {
+    width: 120px;
+    height: 20px;
+}
+
+.lnb_ex .lnb .real_time_keyward_frame .keyward_list {
+    overflow: hidden;
+    height: 20px;
+}
+
+.lnb_ex .lnb .real_time_keyward_frame .keyward_list li {
+    position: relative;
+    margin-left: 20px;
+    width: 100px;
+    height: 20px;
+    background-color: #fff;
+}
+
+.lnb_ex .lnb .real_time_keyward_frame .keyward_list li a {
+    display: block;
+    padding-left: 10px;
+    line-height: 20px;
+    font-size: 1.4rem;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.lnb_ex .lnb .real_time_keyward_frame .keyward_list li:nth-child(1)::after {
+    content: "1";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: -20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #4136BF;
+    text-align: center;
+    line-height: 20px;
+}
+
+/************************* step ***************************/
+.step {
+    width: 1245px;
+    margin: 0 auto;
+}
+
+.step>.sub_title {
+    font-size: 40px;
+    padding-top: 40px;
+}
+
+.step .step_list {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.step .step_list .step_on {
+    background-color: #4136BF;
+    color: white;
+    border-radius: 50%;
+}
+
+.step .step_list .text_step_on {
+    color: #4136BF;
+}
+
+.step .step_list li {
+    width: 80px;
+    height: 80px;
+    background-color: #E4E4E4;
+    border-radius: 50%;
+    margin-right: 120px;
+}
+
+.step .step_list li:last-child {
+    margin-right: 0;
+}
+
+.step .step_list li .circle {
+    font-size: 24px;
+    text-align: center;
+    line-height: 80px;
+    text-align: center;
+}
+
+.step .step_list li .text {
+    margin-top: 20px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+/************************* agree_terms_contents page ***************************/
+.agree_terms_contents {
+
+}
+
+.agree_terms_contents>h2 {
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+}
+
+.agree_terms_contents>form .terms_two .terms_box {
+    height: 100px;
+}
+
+.agree_terms_contents>form li {
+    padding: 20px 0;
+    border-bottom: 1px solid #bbbbbb;
+}
+
+.agree_terms_contents>form li input {
+    display: none;
+}
+
+.agree_terms_contents>form input {
+    display: none;
+}
+
+.agree_terms_contents>form input:checked~label::after {
+    background-image: url(../images/check_icon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.agree_terms_contents>form label {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 1.4rem;
+}
+
+.agree_terms_contents>form label::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    right: 0;
+    border: 1px solid black;
+    transition: all 0.2s;
+}
+
+.agree_terms_contents>form p {
+    margin-bottom: 10px;
+}
+
+.agree_terms_contents>form .terms_box {
+    padding: 10px 10px 10px 20px;
+    margin-top: 20px;
+    border: 1px solid #bbbbbb;
+    height: 240px;
+    overflow-y: scroll;
+    font-size: 1.2rem;
+}
+
+.agree_terms_contents #caution {
+    display: none;
+    margin-top: 40px;
+    text-align: center;
+    color: red;
+    font-size: 1.6rem;
+}
+
+/************************* privacy_input page ***************************/
+.privacy_input .privacy_input_page_title {
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+}
+
+.privacy_input .privacy_input_page_title>h2 {
+    display: inline-block; 
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 2rem;
+} 
+
+.privacy_input .privacy_input_page_title>p {
+    display: inline-block;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 300;   
+    font-size: 1.2rem;
+    margin-left: 15px;
+}
+
+.privacy_input .privacy_input_page_title>p>span {
+    color: red;
+    font-size: 1.2rem;
+}
+
+.privacy_input .caution_pop_up_ex {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.privacy_input .caution_pop_up_ex.pop_up_on {
+    display: block;
+}
+
+.privacy_input .caution_pop_up_ex .caution_pop_up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 20px;
+    background-color: red;
+    color: #fff;
+    font-size: 1.4rem;
+    font-family: "Noto Sans KR", sans-serif;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.privacy_input .caution_pop_up_ex .caution_pop_up:hover .close_btn {
+    color: black;
+}
+
+.privacy_input .caution_pop_up_ex .caution_pop_up .close_btn {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    font-size: 26px;
+    transition: all 0.2s;
+}
+.privacy_input .guide_message {
+    width: 100%;
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 1.2rem;
+}
+.privacy_input .message_cation {
+    color: red;
+}
+.privacy_input>form .necessary_area .input_email {
+    flex-wrap: wrap;
+}
+.privacy_input>form .necessary_area .input_email .email_connecter {
+    display: inline-block;
+    margin-left: 15px;
+}
+.privacy_input>form li.input_pw .pw_off {
+    display: inline-block;
+    width: 25px; height: 25px;
+    margin-left: 10px;
+    background: url(../images/pw_block_icon.png) no-repeat;
+    background-size: contain;
+    transform: translateY(4px);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.privacy_input>form li.input_pw .pw_on {
+    background: url(../images/pw_show_icon.png) no-repeat;
+    background-size: contain;
+    transform: translateY(6px);
+}
+
+.privacy_input>form li {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    border-bottom: 1px solid #bbbbbb;
+    align-items: center;
+    user-select: none;
+}
+
+.privacy_input>form li .important {
+    display: inline-block;
+    color: red;
+    font-size: 1.2rem;
+    margin-left: 5px;
+}
+
+.privacy_input>form li input {
+    flex: 0 0 auto;
+    outline: none;
+    padding: 0 10px;
+    border: 1px solid lightgray;
+    font-size: 1.2rem;
+    margin-left: 15px;
+}
+
+.privacy_input>form li input:focus {
+    border: 1px solid gray;
+}
+
+.privacy_input>form li .false_on {
+    background-color: rgb(255 242 244);
+    border: 2px solid rgb(237 94 94) !important;
+}
+
+.privacy_input>form li .true_on {
+    background-color: rgb(238 255 238);
+    border: 2px solid rgb(127 193 138) !important;  
+}
+
+/* .privacy_input>form li .false_on:focus {
+    border: 1px solid rgb(199, 4, 4);
+} */
+
+.privacy_input>form li label {
+    user-select: none;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 1.4rem;
+}
+
+.privacy_input>form li button {
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    background-color: #4136BF;
+    margin-left: 10px;
+    padding: 10px 20px;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.privacy_input>form li button:hover {
+    background-color: #ffbf00;
+}
+
+.privacy_input>form li select {
+    height: 30px;
+    outline: none;
+    border: 1px solid lightgray;
+    margin-left: 15px;
+    width: 100px;
+    height: 30px;
+}
+
+.privacy_input>form li select:focus {
+    border: 1px solid gray;
+}
+
+.privacy_input>form li .small_bar {
+    width: 100px;
+    height: 30px;
+}
+
+.privacy_input>form li .medium_bar {
+    width: 200px;
+    height: 30px;
+}
+
+/************************* confirm page ***************************/
+.confirm {
+    overflow: hidden;
+    width: 1245px; border: none;
+    background-color: #FFFDF6;
+    padding: 0;
+}
+.confirm>div {
+    float: left;
+    width: 615px;
+    margin-right: 15px;
+}
+.confirm .confirm_img {
+    height: 600px;
+}
+.confirm .confirm_ment_area {
+    margin-right: 0;
+}
+.confirm .confirm_ment_area .carhart_logo {
+    width: 195px;
+    margin: 0 auto 20px;
+}
+.confirm .confirm_ment_area .confirm_ment {
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 30px 0;
+}
+.confirm .confirm_ment_area .confirm_ment h2 {
+    margin-bottom: 20px;
+}
+.confirm .confirm_ment_area .login_page_in_btn_design {
+    display: none;
+    text-align: center;
+    width: 405px; height: 50px;
+    line-height: 50px;
+    margin: 0 auto;
+    background-color: #4136BF;
+    color: white;
+    font-size: 1.4rem;
+    transition: all 0.2s;
+}
+.confirm .confirm_ment_area .login_page_in_btn_design:hover {
+    background-color: #ffbf00;
+}
+.confirm .confirm_ment_area .login_page_in_btn_on {
+    display: block !important;
+}
+
+/************************* prev_next ***************************/
+.prev_next {
+    display: flex;
+    width: 615px;
+    margin: 40px auto 60px;
+}
+
+.prev_next button {
+    display: block;
+    outline: none;
+    border: none;
+    text-align: center;
+    width: 300px;
+    height: 60px;
+    line-height: 60px;
+    margin-right: 15px;
+    font-family: "Permanent Marker";
+    font-size: 1.6rem;
+    background-color: #ffbf00;
+    transition: all 0.2s;
+    cursor: pointer;
+    user-select: none;
+}
+
+.prev_next button:hover {
+    background-color: #4136BF;
+    color: #fff;
+}
+
+.prev_next button:last-child {
+    margin-right: 0;
+}
