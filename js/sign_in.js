@@ -3,8 +3,6 @@ import {
 } from './userdata.js';
 
 
-
-
 //전체 감싸는 FORM
 const loginForm = document.getElementById('login_form');
 
@@ -23,8 +21,6 @@ const showNBlockBtn = document.getElementById('pw_show_block_btn');
 let pwShowState;
 //아이디 저장 상태 변수
 let IDRememberState;
-//비밀번호 체크할때 아이디 체크봉인
-let IDcheckComplete;
 //아이디 저장 ON/OFF 버튼
 const userIdRmBtn = document.getElementById('id_rm_chk');
 //로그인하기 버튼
@@ -44,10 +40,36 @@ userPw.addEventListener('keyup', function () {
 });
 
 //아이디 체크
-
+function allChks () {
+    let IdSearch = userData.some((value) => {
+        return value.userIDInfo === userId.value;
+    });
+    if(!IdSearch) {
+        IDmessage.textContent = '아이디가 일치하지 않습니다!';
+        falseOn(userId, IDmessage);
+    } else {
+        PWCheck();
+    }
+}
 //비밀번호 체크
-function PWCheck(index) {
-    if (userData[index].userPWInfo !== userPw.value) {
+function PWCheck() {
+    let idcheck = userData.findIndex((items)=> {
+        //입력한 밸류값이 items(userData).userIDinfo값에 존재한다면
+        //즉 같다면 해당 인덱스 번호를 반환 그게 아닐시 -1 반환;
+        return items.userIDInfo === userId.value;
+    });
+    let pwcheck = userData.findIndex((items)=> {
+        return items.userPWInfo === userPw.value;
+    });
+    let PWSearch = userData.some((value) => {
+        return value.userPWInfo === userPw.value;
+    });
+    //idcheck pwcheck가 둘다 -1이 나왔다는 말은 해당 밸류값이
+    //userData 배열안에 존재하지 않는다는 말이므로
+    //결국 PWsearch를 통과못해서 false  
+
+    //idcheck !== pwcheck --> 같지 않다면이 true라면 조건문 실행이라는 뜻이기 때문에 알맞지 않음.
+    if(!(PWSearch && idcheck === pwcheck)) {
         PWmessage.textContent = '비밀번호가 일치하지 않습니다!';
         falseOn(userPw, PWmessage);
     } else {
