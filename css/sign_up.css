@@ -542,7 +542,16 @@ img {
     text-align: center;
     margin: 30px 0;
 }
-.confirm .confirm_ment_area .confirm_ment h2 {
+.confirm .confirm_ment_area .confirm_ment #id_n_title_ment {
+    display: flex;
+    justify-content: center;
+}
+.confirm .confirm_ment_area .confirm_ment #id_n_title_ment>p {
+    font-size: 1.6rem;
+    font-family: "Noto Sans KR", sans-serif;
+    margin: 5px 10px 0;
+}   
+.confirm .confirm_ment_area .confirm_ment #id_n_title_ment>h2 {
     margin-bottom: 20px;
 }
 .confirm .confirm_ment_area .login_page_in_btn_design {

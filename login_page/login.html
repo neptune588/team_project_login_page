@@ -7,7 +7,7 @@
     <title>login_page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
     <link rel="stylesheet" href="../css/login.css">
-    <script src="../js/login.js" defer></script>
+    <script type="module" src="../js/sign_in.js" defer></script>
 </head>
 <body>
     <div class="header_ex">
@@ -63,14 +63,14 @@
                 <ul class="id_n_pw">
                     <li>
                         <input type="text" placeholder="아이디" id="user_id" class="bar" required autofocus maxlength="15">
+                        <div class="guide_message"></div>
                     </li>
                     <li>
                         <input type="password" placeholder="비밀번호" id="user_pw" class="bar" required autofocus maxlength="12">
-                    </li>
-                    <div class="show_n_block">
                         <input type="checkbox" id="pw_show_block_btn">
                         <label for="pw_show_block_btn" class="pw_show_block_btn_design"></label>
-                    </div>
+                        <div class="guide_message"></div>
+                    </li>
                 </ul>
                 <ul class="login_save_n_search">
                     <li>

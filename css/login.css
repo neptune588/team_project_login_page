@@ -251,26 +251,35 @@ img {
     background-color: #fff;
     border: 1px solid black;
 }
-
-.login_cotainer .login_box form .id_n_pw .show_n_block {
-    position: absolute;
-    top: 75px;
-    right: -55px;
+.login_cotainer .login_box form .id_n_pw li {
+    position: relative;
+}
+.login_cotainer .login_box form .id_n_pw li>.false_on {
+    border: 1px solid red !important;
+    background-color: pink !important;
 }
 
-.login_cotainer .login_box form .id_n_pw .show_n_block #pw_show_block_btn {
+.login_cotainer .login_box form .id_n_pw li>.guide_message {
+    display: none;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: red;
+}
+.login_cotainer .login_box form .id_n_pw li>#pw_show_block_btn {
     display: none;
 }
-
-.login_cotainer .login_box form .id_n_pw .show_n_block #pw_show_block_btn:checked~.pw_show_block_btn_design {
+.login_cotainer .login_box form .id_n_pw li>#pw_show_block_btn:checked~.pw_show_block_btn_design {
     background-image: url(../images/pw_show_icon.PNG);
-    transform: translateY(4px);
+    transform: translateY(2px);
 }
 
-.login_cotainer .login_box form .id_n_pw .show_n_block .pw_show_block_btn_design {
+.login_cotainer .login_box form .id_n_pw li>.pw_show_block_btn_design {
+    position: absolute;
     display: block;
-    width: 40px;
-    height: 40px;
+    top: 15px; right: -50px;
+    width: 30px;
+    height: 30px;
     background-image: url(../images/pw_block_icon.png);
     background-size: contain;
     background-repeat: no-repeat;

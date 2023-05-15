@@ -82,6 +82,8 @@ const necessaryInput = document.querySelectorAll('.necessary_text');
 const guideMessage = document.querySelectorAll('.guide_message');
 //페이지2 경고 문구 팝업
 const popUpToggleBtn = document.querySelector('.caution_pop_up_ex');
+//이름 입력창
+const userName = document.getElementById('user_name');
 //아이디 입력창
 const userId = document.getElementById('user_id');
 //비밀번호 입력창
@@ -98,6 +100,8 @@ const userPwShowBtn = document.getElementById('pw_view_btn');
 const userIdChkBtn = document.getElementById('user_id_chk');
 //pw상태체크
 let pwToggleState;
+//아이디 confirm 상태 
+let idConfirm;
 
 //팝업 클릭시 
 popUpToggleBtn.addEventListener('click', function () {
@@ -135,6 +139,8 @@ function userIdCheck () {
     } else {
         trueOn(userId, guideMessageArea);
         guideMessageArea.textContent = '알맞은 양식입니다!';
+        //userId전달
+        idConfirm = true;
     }
 }
 
@@ -180,7 +186,7 @@ function emailSelected () {
 //1. 공백체크 -> 공백아니면 이후 조건들 체크
 function valueChecks() {
     let eventTarget = this; //blur 이벤트 발동한 객체
-    //배열로 전환 후 indexof로 인덱스 번호 추출
+    //배열로 전환 후 indexof로 지금 해당하는 그것의 인덱스 번호 추출
     let eventTargetIndex = Array.from(necessaryInput).indexOf(eventTarget);
     //해당하는 요소 마지막 요소인 가이드문구 요소
     let guideMessageArea = this.parentNode.lastElementChild;
@@ -374,8 +380,16 @@ function falseTrueReset (object) {
 }
 
 /********************************* 페이지3 ***********************************/
+const IdNTitleMent = document.getElementById('id_n_title_ment');
+const titleMent = document.getElementById('title_ment');
 
-
+function IdValueLoad () {
+    if(idConfirm) {
+        let newP = document.createElement('p');
+        newP.textContent = userId.value;
+        IdNTitleMent.insertBefore(newP, titleMent);
+    }
+}
 /********************************* 페이지 공통 ***********************************/  
 
 //페이지에 따라 상단 효과
@@ -405,6 +419,7 @@ function showNextPage() {
         prevPageBtn.style.display = 'none';
         nextPageBtn.style.display = 'none';
         loginPageInBtn.classList.add('login_page_in_btn_on');
+        IdValueLoad();
     }
 }
 
@@ -468,5 +483,12 @@ function pageOn() {
     showPage[pageCount].classList.add('page_on');
     stepCircle[pageCount].classList.add('step_on');
     stepText[pageCount].classList.add('text_step_on');
+
+    if(pageCount === 1) {
+        //페이지 1됐을때 포커스 할당 
+        userName.focus();
+    }
     //console.log(pageCount);
 }
+
+
