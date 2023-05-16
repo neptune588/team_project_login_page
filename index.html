@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html lang="kor">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login_page</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/login.css">
-    <script type="module" src="../js/sign_in.js" defer></script>
+    <script type="module" src="./js/main.js" defer></script>
 </head>
+
 <body>
     <div class="header_ex">
         <header class="header">
-            <div class="logo"><a href="../index.html"></a></div><!-- logo -->
+            <div class="logo"><a href="./index.html"></a></div><!-- logo -->
             <nab class="gnb">
                 <ul class="gnb_list">
-                    <li class="sign_in"><a href="#!">로그인</a></li>
-                    <li class="sign_up"><a href="#!">회원가입</a></li>
+                    <li class="sign_in"><a href="./login_page/login.html">로그인</a></li>
+                    <li class="sign_up"><a href="./login_page/sign_up.html">회원가입</a></li>
                     <li class="order"><a href="#!">주문조회</a></li>
                     <li class="icon"><a href="#!"></a></li>
                     <li class="cart"><a href="#!"></a></li>
@@ -54,50 +56,84 @@
             </div><!-- real_time_keyward_frame -->
         </nav><!-- lnb -->
     </div>
-    <div class="login_cotainer">
-        <div class="login_box">
-            <h2 class="sub_title">Carhartt Login</h2>
-            <p>회원 로그인</p>
-            <span class="solid"></span>
-            <form action="" id="login_form">
-                <ul class="id_n_pw">
-                    <li>
-                        <input type="text" placeholder="아이디" id="user_id" class="bar" required autofocus maxlength="15">
-                        <div class="guide_message"></div>
-                    </li>
-                    <li>
-                        <input type="password" placeholder="비밀번호" id="user_pw" class="bar" required autofocus maxlength="12">
-                        <input type="checkbox" id="pw_show_block_btn">
-                        <label for="pw_show_block_btn" class="pw_show_block_btn_design"></label>
-                        <div class="guide_message"></div>
-                    </li>
-                </ul>
-                <ul class="login_save_n_search">
-                    <li>
-                        <input type="checkbox" id="id_rm_chk" class="id_chk_design">
-                        <label for="id_rm_chk" class="id_rm">아이디 저장</label>
-                    </li>
-                    <li>
-                        <a href="./research.html">아이디/비밀번호 찾기</a>
-                    </li>
-                </ul>
-            </form>
-            <ul class="sign_in_n_sign_up">
-                <li>
-                    <p id="sign_in_chk">로그인</p>
-                </li>
-                <li>
-                    <a href="./sign_up.html" id="sign_up_chk">회원가입</a>
-                </li>
-            </ul>
-            <p class="easy_notice">간편하게 로그인 하세요!</p>
-            <ul class="sns_login">
-                <li><a href="#!" class="kakao_icon"><img src="../images/sns_01.png" alt="kakao_sns"></a></li>
-                <li><a href="#!" class="facebook_icon"><img src="../images/sns_02.png" alt="fb_sns"></a></li>
-                <li><a href="#!" class="naver_icon"><img src="../images/sns_03.png" alt="naver_sns"></a></li>
-            </ul>
+    <div class="visual_main"></div><!-- visual_main -->
+    <div class="product_container">
+        <div class="prev_btn btn btn01">
+            <i class="fas fa-chevron-left"></i>
         </div>
-    </div><!-- login_cotainer -->
+        <div class="next_btn btn btn02">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        <section class="best_product product">
+            <h2 class="sub_title">Best Product</h2>
+            <div class="product_frame">
+                <ul class="product_list p_l_01">
+                </ul>
+                <ul class="product_list p_l_02">
+                </ul>
+            </div>
+        </section><!-- best_product -->
+        
+        <section class="new_product product">
+            <h2 class="sub_title">New Product</h2>
+            <ul class="product_frame">
+
+            </ul>
+        </section><!-- new_product -->
+    </div><!-- product_container -->
+    <div class="main_issue_contents">
+        <section class="look_book">
+            <h2 class="sub_title">LOOK BOOK - S/S 2023</h2>
+            <div class="look_book_thumnail">
+                <div class="big_look_book">
+                    <img src="" alt="">
+                </div><!-- big_look_book -->
+                <div class="video_n_look_book">
+                    <div class="video_film">
+                        <video src="https://youtu.be/_EQlEfE1ahU"></video>
+                    </div><!-- video_film -->
+                    <div class="small_look_book">
+                        <div><img src="" alt=""></div>
+                        <div><img src="" alt=""></div>
+                    </div><!-- small_look_book -->
+                </div><!-- video_n_look_book -->
+            </div><!-- look_book_thumnail -->
+            <div class="look_book_view">
+
+            </div><!-- look_book_bottom -->
+        </section><!-- look_book -->
+        <section class="mds_pick">
+            <h2 class="sub_title">MD'S PICK</h2>
+            <ul>
+                <li class="acodion_on">
+                    <div class="product_info">
+
+                    </div>
+                </li>
+                <li><a href="#1"></a></li>
+                <li><a href="#!"></a></li>
+                <li><a href="#1"></a></li>
+            </ul>
+        </section><!-- mds_pick -->
+    </div><!-- main_issue_contents -->
+    <section class="insta">
+        <h2 class="sub_title">INSTAGRAM</h2>
+        <ul>
+            <li><a href="#!"></a></li>
+            <li><a href="#!"></a></li>
+            <li><a href="#!"></a></li>
+            <li><a href="#!"></a></li>
+        </ul>
+    </section><!-- insta -->
+    <section class="site_info">
+        <ul class="info_list">
+            <li><a href="#!">칼하트윕에 대하여</a></li>
+            <li><a href="#!">칼하트윕 라디오</a></li>
+            <li><a href="#!">기업의 사회적 책임</a></li>
+            <li><a href="#!">채용 안내</a></li>
+            <li><a href="#!">일반 적합 인증</a></li>
+        </ul><!-- site_map -->
+    </section>
     <div class="footer_ex">
         <footer class="footer">
             <div class="footer_top">
@@ -142,4 +178,5 @@
         </footer><!-- footer -->
     </div><!-- footer_ex -->
 </body>
+
 </html>

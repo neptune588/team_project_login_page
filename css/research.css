@@ -202,7 +202,7 @@ img {
     font-family: "Noto Sans KR", sans-serif;
     padding-bottom: 60px;
 }
-.id_n_pw_research_area > p {
+.id_n_pw_research_area .ment {
     text-align: center;
     font-size: 1.4rem;
     margin: 0 auto 20px;
@@ -253,12 +253,9 @@ img {
     cursor: pointer;
     user-select: none;
 }
-.id_n_pw_research_area .tap_menu .tab:hover {
-    color: red;
-}
 
 .id_n_pw_research_area .tap_menu .tab_on {
-    background-color: #ffbf00;
+    background-color: #ffbf00 !important;
 }
 .id_n_pw_research_area .show_menu {
     display: none;
@@ -278,6 +275,9 @@ img {
     background-color: #cfcfcf;
     padding: 0 15px;
     transform: all 0.2s;
+}
+.id_n_pw_research_area .show_menu input:nth-child(2) {
+    margin-bottom: 15px;
 }
 .id_n_pw_research_area .show_menu input:focus {
     background-color: #fff;
@@ -335,6 +335,12 @@ img {
 }
 .pop_up_area_ex .id_pop_up .user_id_show_design {
     margin: 20px 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+.pop_up_area_ex .pw_pop_up #user_pw_show {
+    margin: 0 5px;
+    font-weight: 700;
 }
 .pop_up_area_ex .pop_up_not p:nth-child(1) {
     font-size: 1.6rem;
