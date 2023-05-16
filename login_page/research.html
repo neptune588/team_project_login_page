@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="kor">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID/PW_Research</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/research.css">
+    <script type="module" src="../js/userdata_research.js" defer></script>
+</head>
+
+<body>
+    <div class="header_ex">
+        <header class="header">
+            <div class="logo"><a href="#!"></a></div><!-- logo -->
+            <nab class="gnb">
+                <ul class="gnb_list">
+                    <li class="sign_in"><a href="#!">로그인</a></li>
+                    <li class="sign_up"><a href="#!">회원가입</a></li>
+                    <li class="order"><a href="#!">주문조회</a></li>
+                    <li class="icon"><a href="#!"></a></li>
+                    <li class="cart"><a href="#!"></a></li>
+                </ul><!-- gnb_list -->
+            </nab><!-- gnb -->
+        </header><!-- header -->
+        <!--         <div class="quick_menu">
+            <ul>
+                <li class="recently_product"><a href="#!"></a></li>
+                <li class="recently_product"><a href="#!"></a></li>
+                <li class="top_btn"><a href="#!">TOP</a></li>
+                <li class="counsel_btn"><a href="#!"></a></li>
+            </ul>
+        </div> -->
+    </div><!-- header_ex -->
+    <div class="lnb_ex">
+        <nav class="lnb">
+            <ul class="main_menu_list">
+                <li><a href="#!">NEW</a></li>
+                <li><a href="#!">TOP</a></li>
+                <li><a href="#!">BOTTOM</a></li>
+                <li><a href="#!">ACC</a></li>
+                <li><a href="#!">PROMOTION</a></li>
+                <li><a href="#!">SALE</a></li>
+                <li><a href="#!">BRAND</a></li>
+            </ul><!-- main_menu_list -->
+            <div class="real_time_keyward_frame">
+                <ul class="keyward_list">
+                    <li><a href="#!">티셔츠</a></li>
+                    <li><a href="#!">맨투맨</a></li>
+                    <li><a href="#!">셔츠</a></li>
+                    <li><a href="#!">청바지</a></li>
+                    <li><a href="#!">언더웨어</a></li>
+                </ul><!-- keyward_list -->
+            </div><!-- real_time_keyward_frame -->
+        </nav><!-- lnb -->
+    </div>
+    <div class="id_n_pw_research_area_ex">
+        <div class="id_n_pw_research_area">
+            <a href="./sign_up.html" class="logo_img"><img src="../images/main_logo_black.png" alt=""></a>
+            <section class="tap_menu">
+                <p id="id_search_tab" class="tab tab_on">아이디 찾기</p>
+                <p id="pw_search_tab" class="tab">비밀번호 찾기</p>
+            </section>
+            <p>가입하실때 입력하셨던 이름과 이메일을 입력 해주세요.</p>
+            <section class="show_menu menu_on">
+                <div class="id_menu">
+                    <input type="text" id="name_bar" class="bar_style" placeholder="이름을 입력 해주세요." required
+                        autofocus>
+                    <input type="text" id="email_bar" class="bar_style" placeholder="이메일을 입력 해주세요." required
+                    autofocus>
+                </div>
+            </section>
+            <section class="show_menu">
+                <div class="pw_menu">
+                    <input type="text" id="id_bar" class="bar_style" placeholder="아이디를 입력 해주세요." required autofocus>
+                    <input type="text" id="birth_bar" class="bar_style" placeholder="생년월일을 입력 해주세요." required
+                        autofocus>
+                </div>
+            </section>
+            <button type="button" id="search_btn" class="search_btn_design">찾기</button>
+            <a href="./login.html" class="return_login_page">로그인 페이지로 돌아가기</a>
+        </div>
+    </div>
+    <div id="pop_up_ex" class="pop_up_area_ex">
+        <!-- pop_up_on -->
+        <div id="pop_up_01" class="id_pop_up">
+            <h2>칼하트 회원 안내</h2>
+            <p class="guide"><span id="user_id_show"></span>님이 가입하신 아이디입니다.</p>
+            <p id="user_id_show" class="user_id_show_design">d</p>
+            <p id="confirm_btn01" class="confirm_btn_design">확인</p>
+            <span class="close_btn">X</span>
+        </div><!--  pop_up_on -->
+        <div id="pop_up_02" class="pw_pop_up">
+            <h2>칼하트 회원 안내</h2>
+            <p class="guide">아이디의 비밀번호는<span id="user_pw_show"></span>입니다.</p>
+            <p id="user_pw_show" class="user_pw_show_design">d</p>
+            <p id="confirm_btn02" class="confirm_btn_design">확인</p>
+            <span class="close_btn">X</span>
+        </div>
+        <div id="pop_up_03" class="pop_up_not">
+            <p>검색하신 내용을 찾을 수 없습니다.<br/>다른 정보를 이용해 다시 검색해 주십시오.</p>
+            <p id="confirm_btn03" class="confirm_btn_design">확인</p>
+        </div>
+    </div>
+</body>
+
+</html>
