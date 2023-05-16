@@ -1,6 +1,13 @@
-import {regextTotalArray, regexNameArray, regexEmailArray} from './regex.js'
+import {
+    regextTotalArray,
+    regexNameArray,
+    regexEmailArray
+} from './regex.js'
+import {
+    userData
+} from './userdata.js'
 
-/********************************* 페이지1 ***********************************/  
+/********************************* 페이지1 ***********************************/
 
 //정규식 
 const regexTestName = regexNameArray[0].regex;
@@ -51,7 +58,7 @@ function termsClick() {
     for (let i = 0; i < termsClass.length; i++) {
         //2개다 true가 되면 전체 약관동의도 true되게함.
         let termsClassValue = Array.from(termsClass).every((value) => {
-            return value.checked === true;
+            return value.checked;
         });
         if (termsClassValue) {
             termsAllChkBtn.checked = true;
@@ -74,7 +81,7 @@ function toggleCation() {
 }
 
 
-/********************************* 페이지2 ***********************************/  
+/********************************* 페이지2 ***********************************/
 
 //필수 입력 요소들
 const necessaryInput = document.querySelectorAll('.necessary_text');
@@ -102,7 +109,6 @@ const userIdChkBtn = document.getElementById('user_id_chk');
 let pwToggleState;
 //아이디 confirm 상태 
 let idConfirm;
-
 //팝업 클릭시 
 popUpToggleBtn.addEventListener('click', function () {
     this.classList.remove('pop_up_on');
@@ -111,7 +117,7 @@ popUpToggleBtn.addEventListener('click', function () {
 for (let i = 0; i < necessaryInput.length; i++) {
     necessaryInput[i].addEventListener('keyup', valueChecks);
     necessaryInput[i].addEventListener('blur', valueChecks);
-} 
+}
 //중복확인체크 , 아이디의 경우 버튼을 통해 체크
 userIdChkBtn.addEventListener('click', userIdCheck);
 //pw보이기 체크
@@ -120,22 +126,29 @@ userPwShowBtn.addEventListener('click', userPwShow);
 userPw.addEventListener('keyup', (event) => {
     let CapsLock = event.getModifierState('CapsLock');
     let guideMessageArea = userPw.parentNode.lastElementChild;
-    if(!pwToggleState && CapsLock && userPw.value.length > 0) {
+    if (!pwToggleState && CapsLock && userPw.value.length > 0) {
         guideMessageArea.textContent = 'Caps Lock을 꺼주세요!'
     }
 });
 //이메일 도메인부분 선택해서 넣었을떄 
-userEmailSelected.addEventListener('change',emailSelected);
+userEmailSelected.addEventListener('change', emailSelected);
 
 //아이디 중복체크
-function userIdCheck () {
+function userIdCheck() {
     let guideMessageArea = userId.parentNode.lastElementChild;
-    if(!(userId.value)) {
+    let IDMoutainChk = userData.some((array) => {
+        return array.userIDInfo === userId.value;
+    });
+    console.log(IDMoutainChk) //true나오면 중복;
+    if (!(userId.value)) {
         falseOn(userId, guideMessageArea);
         guideMessageArea.textContent = '입력값을 입력 혹은 선택해주세요!';
-    } else if(!(regexTest02.test(userId.value))) {
+    } else if (!(regexTest02.test(userId.value))) {
         falseOn(userId, guideMessageArea);
         guideMessageArea.textContent = '유효하지 않은 입력입니다. (특수문자 _는 한번만 가능, 영어 소문자 또는 숫자 특수문자_ 조합 가능, 6~15자)'
+    } else if (IDMoutainChk) {
+        falseOn(userId, guideMessageArea);
+        guideMessageArea.textContent = '중복된 아이디입니다!'
     } else {
         trueOn(userId, guideMessageArea);
         guideMessageArea.textContent = '알맞은 양식입니다!';
@@ -146,7 +159,7 @@ function userIdCheck () {
 
 //패스워드 보이기/끄기 
 function userPwShow() {
-    if(!pwToggleState) {
+    if (!pwToggleState) {
         userPw.setAttribute('type', 'text');
         userPwReChk.setAttribute('type', 'text');
     } else {
@@ -158,7 +171,7 @@ function userPwShow() {
 
 //패스워드 보이기/끄기 아이콘 on/off
 function pwShowOnOff() {
-    if(!pwToggleState) {
+    if (!pwToggleState) {
         userPwShowBtn.classList.add('pw_on');
         pwToggleState = true;
     } else {
@@ -168,10 +181,10 @@ function pwShowOnOff() {
 }
 
 //이메일 뒷자리(도메인영역) 셀렉트로 선택했을때(선택영역)
-function emailSelected () {
+function emailSelected() {
     let selectedValue = userEmailSelected.options[userEmailSelected.selectedIndex];
     let guideMessageArea = this.parentNode.lastElementChild;
-    if(!selectedValue.value) {
+    if (!selectedValue.value) {
         userEmailAfter.removeAttribute('disabled');
         //직접입력을 선택했을때는 이메인 도메인 입력창 활성화 
     } else {
@@ -190,52 +203,51 @@ function valueChecks() {
     let eventTargetIndex = Array.from(necessaryInput).indexOf(eventTarget);
     //해당하는 요소 마지막 요소인 가이드문구 요소
     let guideMessageArea = this.parentNode.lastElementChild;
-    if(!(this.value)) {
-        falseOn (eventTarget, guideMessageArea); //해당 인덱스 요소의 밸류가 공백이면 false 추가 함수로
+    if (!(this.value)) {
+        falseOn(eventTarget, guideMessageArea); //해당 인덱스 요소의 밸류가 공백이면 false 추가 함수로
         guideMessageArea.textContent = '입력값을 입력 혹은 선택해주세요!';
     } else {
         indexSearch(eventTargetIndex);
     } //공백이 아니면 다른 조건 체크하기 위해 indexSearch실행
-
 }
 
 //공백이 아닐때 각각의 인덱스 번호에 해당하는 조건식함수들 호출
 function indexSearch(index) {
     switch (index) {
-        case 0 : {
+        case 0: {
             valueCheck01(index);
             break;
         }
-        case 2 : {
+        case 2: {
             valueCheck02(index);
             break;
         }
-        case 1 :
-        case 3 : {
+        case 1:
+        case 3: {
             valueCheck03(index);
             break;
         }
-        case 4 : {
+        case 4: {
             valueCheck04(index);
             break;
         }
-        case 5 : {
+        case 5: {
             valueCheck05(index);
             break;
         }
-        case 6 : {
+        case 6: {
             valueCheck06(index);
             break;
         }
-        case 7 : {
+        case 7: {
             valueCheck07(index);
             break;
         }
-        case 8 : {
+        case 8: {
             valueCheck08(index);
             break;
         }
-        case 9 :  {
+        case 9: {
             valueCheck09(index);
             break;
         }
@@ -244,7 +256,7 @@ function indexSearch(index) {
 }
 
 //이름 체크
-function valueCheck01 (index) {
+function valueCheck01(index) {
     //문자열과 정규식은 자료형(타입)이 다르기 떄문에 바로 비교를 하면 안되고
     //test메서드를 통해 밸류를 체크
     let thisInputIndex = necessaryInput[index];
@@ -259,7 +271,7 @@ function valueCheck01 (index) {
 }
 
 //생년월일 중에 생년 체크
-function valueCheck02 (index) {
+function valueCheck02(index) {
     let thisInputIndex = necessaryInput[index];
     let guideMessageArea = thisInputIndex.parentNode.lastElementChild;
     //value값은 항상 문자열이기떄문에 숫자비교를할떄는 숫자로 형변환 후 비교 
@@ -273,7 +285,7 @@ function valueCheck02 (index) {
 }
 
 //성별/ 생년월일중 월 체크
-function valueCheck03 (index) {
+function valueCheck03(index) {
     let thisInputIndex = necessaryInput[index];
     let guideMessageArea = thisInputIndex.parentNode.lastElementChild;
     if (!(thisInputIndex.value)) {
@@ -285,7 +297,7 @@ function valueCheck03 (index) {
 }
 
 //생년월일 중에 일 체크
-function valueCheck04 (index) {
+function valueCheck04(index) {
     let thisInputIndex = necessaryInput[index];
     let guideMessageArea = thisInputIndex.parentNode.lastElementChild;
     if (!(regexTest01.test(parseInt(thisInputIndex.value)))) {
@@ -298,16 +310,16 @@ function valueCheck04 (index) {
 }
 
 //공백아닐때 false제거 (아이디칸만)
-function valueCheck05 (index) {
+function valueCheck05(index) {
     let thisInputIndex = necessaryInput[index];
     falseTrueReset(thisInputIndex);
 }
 
 //비밀번호 체크 
-function valueCheck06 (index) {
+function valueCheck06(index) {
     let thisInputIndex = necessaryInput[index];
     let guideMessageArea = thisInputIndex.parentNode.lastElementChild;
-    if(!(regexTest02.test(thisInputIndex.value))) {
+    if (!(regexTest02.test(thisInputIndex.value))) {
         falseOn(thisInputIndex, guideMessageArea);
         guideMessageArea.textContent = '유효하지 않은 입력입니다. (특수문자 _는 한번만 가능, 영어 소문자 또는 숫자 특수문자_ 조합 가능, 6~15자)'
     } else {
@@ -317,27 +329,27 @@ function valueCheck06 (index) {
 }
 
 //비밀번호 재확인 
-function valueCheck07 (index) {
+function valueCheck07(index) {
     let thisInputIndex = necessaryInput[index];
     let guideMessageArea = thisInputIndex.parentNode.lastElementChild;
     //비밀번호칸에 유효한 값이 들어갔는지 체크
-    let pwInputClassChk = userPw.classList.contains('trueOn'); 
+    let pwInputClassChk = userPw.classList.contains('trueOn');
     let userPwValue = userPw.value
     //console.log(userPwValue);
-    if(!pwInputClassChk && userPwValue !== thisInputIndex.value) {
+    if (!pwInputClassChk && (userPwValue !== thisInputIndex.value)) {
         falseOn(thisInputIndex, guideMessageArea);
         guideMessageArea.textContent = '비밀번호가 일치하지 않습니다.'
     } else {
         trueOn(thisInputIndex, guideMessageArea);
-        guideMessageArea.textContent = '알맞은 양식입니다!'
+        guideMessageArea.textContent = '비밀번호가 일치합니다!'
     }
 }
 
 //이메일 골뱅이 앞부분 체크
-function valueCheck08 (index) {
+function valueCheck08(index) {
     let thisInputIndex = necessaryInput[index];
     let guideMessageArea = thisInputIndex.parentNode.lastElementChild;
-    if(!regexTestEmailBefore.test(thisInputIndex.value)) {
+    if (!regexTestEmailBefore.test(thisInputIndex.value)) {
         falseOn(thisInputIndex, guideMessageArea);
         guideMessageArea.textContent = '유효하지 않은 입력입니다. (특수문자 _는 한번만 가능, 영어 소문자 또는 숫자 특수문자_ 조합 가능, 2~12자)'
     } else {
@@ -347,10 +359,10 @@ function valueCheck08 (index) {
 }
 
 //이메일 뒷자리 부분 체크(직접입력하는 영역)
-function valueCheck09 (index) {
+function valueCheck09(index) {
     let thisInputIndex = necessaryInput[index];
     let guideMessageArea = thisInputIndex.parentNode.lastElementChild;
-    if(!regexTestEmailAfter.test(thisInputIndex.value)) {
+    if (!regexTestEmailAfter.test(thisInputIndex.value)) {
         falseOn(thisInputIndex, guideMessageArea);
         guideMessageArea.textContent = '유효하지 않은 입력입니다. (영어 소문자와 숫자, .만 입력 가능, .은 두번까지만)'
     } else {
@@ -360,21 +372,21 @@ function valueCheck09 (index) {
 }
 
 //border_red //스타일주는 용도
-function falseOn (object, objectsiblingLast) {
+function falseOn(object, objectsiblingLast) {
     objectsiblingLast.style.color = 'red';
     object.classList.remove('true_on');
     object.classList.add('false_on');
 }
 
 //border_green //스타일주는 용도
-function trueOn (object, objectsiblingLast) {
+function trueOn(object, objectsiblingLast) {
     objectsiblingLast.style.color = 'green';
     object.classList.remove('false_on');
     object.classList.add('true_on');
 }
 
 //border_reset 
-function falseTrueReset (object) {
+function falseTrueReset(object) {
     object.classList.remove('false_on');
     object.classList.remove('true_on');
 }
@@ -383,14 +395,16 @@ function falseTrueReset (object) {
 const IdNTitleMent = document.getElementById('id_n_title_ment');
 const titleMent = document.getElementById('title_ment');
 
-function IdValueLoad () {
-    if(idConfirm) {
+//가입한 아이디 표기
+function IdValueLoad() {
+    if (idConfirm) {
         let newP = document.createElement('p');
         newP.textContent = userId.value;
         IdNTitleMent.insertBefore(newP, titleMent);
     }
 }
-/********************************* 페이지 공통 ***********************************/  
+
+/********************************* 페이지 공통 ***********************************/
 
 //페이지에 따라 상단 효과
 const stepCircle = document.querySelectorAll('.circle');
@@ -420,6 +434,11 @@ function showNextPage() {
         nextPageBtn.style.display = 'none';
         loginPageInBtn.classList.add('login_page_in_btn_on');
         IdValueLoad();
+
+        //초기화
+        for (let i = 0; i < necessaryInput.length; i++) {
+            necessaryInput[i].value = '';
+        }
     }
 }
 
@@ -432,6 +451,7 @@ function showPrevPage() {
 
         pageOn();
 
+        //초기화
         for (let i = 0; i < necessaryInput.length; i++) {
             necessaryInput[i].value = '';
         }
@@ -458,15 +478,19 @@ function pageCheck01() {
 }
 
 function pageCheck02() {
-    let necessaryInputChk = Array.from(necessaryInput).every((inputValue) => {
-        return inputValue.value;
-    }) //해당 클래스 속성을 가진 요소들의 밸류가 전부 true가 됐을때 true 그게 아니면 false
-    if (!(necessaryInputChk)) {
-        //밸류가 하나라도 false일때 조건문실행, //necessaryInputChk 가 false라는 뜻은 배열 요소중 어느 하나라도 false라는 말이므로
-
+    let necessaryInputChk01 = Array.from(necessaryInput).every((event) => {
+        return event.value;
+    });
+    let necessaryInputChk02 = Array.from(necessaryInput).every((event) => {
+        return event.classList.contains('true_on');
+    });
+    //모든 원소가 조건을 만족하면 true, 하나라도 만족하지 않으면 false를 반환한다.
+    //해당 배열안에 있는 값들이 조건을 "모두" 통과해야만 true를 반환해준다.
+    if (!(necessaryInputChk01 && necessaryInputChk02) ) {
+        //necessaryInputChk, necessaryInputChk02 가 false라는 뜻은 해당 조건 하나도 만족 못했다는 말. 
         //pop_up 관련
         popUpToggleBtn.classList.add('pop_up_on');
-    } else if (necessaryInputChk) {
+    } else {
         pageCount++;
 
         pageOn();
@@ -484,11 +508,15 @@ function pageOn() {
     stepCircle[pageCount].classList.add('step_on');
     stepText[pageCount].classList.add('text_step_on');
 
-    if(pageCount === 1) {
+    if (pageCount === 1) {
         //페이지 1됐을때 포커스 할당 
         userName.focus();
     }
     //console.log(pageCount);
 }
 
-
+/* function allValueTrue () {
+    for(let i = 0; i < necessaryInput.length; i++) {
+        necessaryInput[i].classList.contains('trueOn');
+    }
+} */
